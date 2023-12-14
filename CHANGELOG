@@ -1,0 +1,4 @@
+0.0.2 - Add methods GetStringValue, to get a slice of string from a value of ç
+        items separated by a string.
+
+0.0.1 - First Release.
