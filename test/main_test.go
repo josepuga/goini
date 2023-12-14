@@ -44,6 +44,13 @@ func TestFromByte(t *testing.T) {
 		t.Logf("5 Valid Themes %s\n", themes)
 		t.Error("Only 5 themes are valid")
 	}
+
+    sections := ini.GetSectionValues()
+    // "", "gui settins", "theme"
+    if len(sections) != 3 {
+        t.Logf("Sections... %s\n", sections)
+        t.Error("Sections len is not 3")
+    }
 }
 
 func TestFromFile(t *testing.T) {

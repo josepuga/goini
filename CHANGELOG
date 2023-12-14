@@ -1,3 +1,5 @@
+0.0.3 - Add methos GetSectionValues
+
 0.0.2 - Add methods GetStringValue, to get a slice of string from a value of ç
         items separated by a string.
 

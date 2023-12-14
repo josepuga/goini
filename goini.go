@@ -58,6 +58,16 @@ func (i *Ini) SectionExists(section string) bool {
 	return exists
 }
 
+// GetSectionValues returns a slice with all the sections. Note: the empty
+// section "" is always available.
+func (i *Ini) GetSectionValues() []string {
+	result := make([]string, 0, len(i.sections))
+	for sec := range i.sections {
+		result = append(result, sec)
+	}
+	return result
+}
+
 // GetInt gets the key value from section as Int.
 // If error or value is empty or bad formed returns default value.
 func (i *Ini) GetInt(section string, key string, def int) int {
