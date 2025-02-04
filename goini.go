@@ -68,6 +68,19 @@ func (i *Ini) GetSectionValues() []string {
 	return result
 }
 
+// GetSectionKeys returns a slice with the keys of the section
+func (i *Ini) GetSectionKeys(section string) []string {
+    result := []string{}
+    if ! i.SectionExists(section) {
+        return result
+    }
+    for k := range i.sections[section].Item {
+       result = append(result, k)
+    }
+    return result
+}
+
+
 // GetInt gets the key value from section as Int.
 // If error or value is empty or bad formed returns default value.
 func (i *Ini) GetInt(section string, key string, def int) int {
